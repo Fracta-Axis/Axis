@@ -12,10 +12,6 @@
 
 </div>
 
----
-
-### Badges
-
 ### Badges
 
 ![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white&style=for-the-badge)
