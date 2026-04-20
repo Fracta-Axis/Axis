@@ -25,7 +25,7 @@ Powered by the Unified Fractal-Stochastic Model (MFSU)
 
 ---
 
-[![Diagrama explicativo de FractalShiel(https://github.com/Fracta-Axis/Axis/blob/main/image (1).jpg)](https://github.com/Fracta-Axis/Axis)
+[![Diagrama explicativo de FractalShiel(https://github.com/Fracta-Axis/Axis/blob/main/image (1).jpg)]
 
 
 
