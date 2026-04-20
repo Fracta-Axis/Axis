@@ -1,5 +1,6 @@
 
-[![AXIS Logo](https://github.com/Fracta-Axis/Axis/blob/main/image-8.jpg)](https://github.com/Fracta-Axis/Axis)
+
+[![AXIS Logo](https://github.com/Fracta-Axis/Axis/blob/main/image-8.jpg)](https://github.com/Fracta-Axis/Axis)
 
 <div align="center">
 
@@ -23,7 +24,7 @@ Powered by the Unified Fractal-Stochastic Model (MFSU)
 [![FractalShield](https://img.shields.io/badge/FractalShield-v4-00b8ff?style=for-the-badge)]()
 
 ---
-[![Diagrama explicativo de FractalShield](diagrama-axis-fractalshield.png))
+[![image (1).jpg))
 
 
 ## What is AXIS Vault?
@@ -66,7 +67,8 @@ flowchart TD
     C -.-> G & H & I
 
 2. FractalShield Layered Defensemermaid
-flowchart TD
+
+flowchart TD
     P[Password] --> KDF[KDF_M = 256]
     KDF --> Real[Real Layer\nMFSU\x04 + Plaintext]
     KDF --> D1[Decoy Layer 1\nKDF_M = 512]
@@ -96,15 +98,18 @@ CLI + beautiful Streamlit web UI
 File format .fracta v4 (fully documented)
 
 Installationbash
-git clone https://github.com/Fracta-Axis/Axis.git
+
+git clone https://github.com/Fracta-Axis/Axis.git
 cd Axis
 pip install -r requirements.txt
 
 Quick StartWeb Interface (recommended)bash
-streamlit run ui/fracts_vault.py
+
+streamlit run ui/fracts_vault.py
 
 CLIbash
-# Encrypt with Maximum protection
+
+# Encrypt with Maximum protection
 python -m cli --encrypt secret.pdf --password "MiContraseñaMuySegura123" --level 3
 
 # Decrypt
@@ -144,7 +149,8 @@ Core MFSU implementation: core/field.py + crypto/cipher.py
 
 LicenseApache License 2.0 — feel free to use, modify and contribute.Made with passion by Miguel Ángel Franco León
 Independent Researcher — Fracta-Axis Project“The same physical law that governs the fractal structure of the universe can also protect our data.”
----
+
+---
 
 
 ### Autor
