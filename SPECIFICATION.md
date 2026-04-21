@@ -373,7 +373,7 @@ BLOCK_SIZE      = 16
 
 ## 12. License
 
-This specification is released under the **MIT License**, consistent with the FractalyxwebLite repository.
+This specification is released under the **Apache-2.0 License**, consistent with the FractalyxwebLite repository.
 
 ---
 
