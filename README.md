@@ -154,6 +154,10 @@ LicenseApache License 2.0 — feel free to use, modify and contribute.Made with 
 Independent Researcher — Fracta-Fractalyx Project“The same physical law that governs the fractal structure of the universe can also protect our data.”
 
 ---
+### 💠 Wikidata & Standards
+Este proyecto y el formato `.fyx` están registrados en **Wikidata** como un estándar de código abierto para la representación y cifrado de datos mediante algoritmos fractales.
+- **Formato:** .fyx (Fractal Exchange Format)
+- **Seguridad:** Cifrado basado en complejidad recursiva y mapeo de coordenadas.
 
 
 ### Autor
