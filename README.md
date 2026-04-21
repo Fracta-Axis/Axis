@@ -1,6 +1,6 @@
 
 
-[![Fractalyx Logo](https://github.com/Fracta-Axis/Axis/blob/main/image-8.jpg)](https://github.com/Fracta-Axis/Axis)
+[![Fractalyx Logo](https://github.com/Fracta-Axis/Fractalyx/blob/main/image-8.jpg)](https://github.com/Fracta-Axis/Fractalyx)
 
 <div align="center">
 
@@ -32,7 +32,7 @@ Powered by the Unified Fractal-Stochastic Model (MFSU)
 
 ## What is Fractalyx Vault?
 
-**AXIS Vault** is a complete symmetric cryptographic system built around a single physically-motivated equation: the **Unified Fractal-Stochastic Model (MFSU)**.
+**FRACTALYX Vault** is a complete symmetric cryptographic system built around a single physically-motivated equation: the **Unified Fractal-Stochastic Model (MFSU)**.
 
 All primitives — KDF, stream cipher, hash, TOTP and the revolutionary **FractalShield** defense — derive from the same SPDE:
 
@@ -102,8 +102,8 @@ File format .fracta v4 (fully documented)
 
 Installationbash
 
-git clone https://github.com/Fracta-Axis/Axis.git
-cd Axis
+git clone https://github.com/Fracta-Axis/Fractalyx.git
+cd Fractalyx
 pip install -r requirements.txt
 
 Quick StartWeb Interface (recommended)bash
