@@ -1,20 +1,20 @@
 """
-CLI de axis-vault — axis.cli.__main__
+CLI de fractalyx-vault — fractalyx.cli.__main__
 
-Entry point instalado como `axis-vault` por pyproject.toml.
+Entry point instalado como `fractalyx-vault` por pyproject.toml.
 
 Subcomandos:
-    axis-vault encrypt  <archivo> [-o salida] [-p password]
-    axis-vault decrypt  <archivo> [-o salida] [-p password]
-    axis-vault hash     <archivo|texto>
-    axis-vault totp     <secreto>
-    axis-vault info     <archivo.fracta>
+    fractalyx-vault encrypt  <archivo> [-o salida] [-p password]
+    fractalyx-vault decrypt  <archivo> [-o salida] [-p password]
+    fractalyx-vault hash     <archivo|texto>
+    fractalyx-vault totp     <secreto>
+    fractalyx-vault info     <archivo.fracta>
 
 Ejemplos:
-    axis-vault encrypt documento.pdf
-    axis-vault decrypt documento.pdf.fracta -o documento_dec.pdf
-    axis-vault hash README.md
-    axis-vault totp MI_SECRETO_COMPARTIDO
+    fractalyx-vault encrypt documento.pdf
+    fractalyx-vault decrypt documento.pdf.fracta -o documento_dec.pdf
+    fractalyx-vault hash README.md
+    fractakyx-vault totp MI_SECRETO_COMPARTIDO
 """
 
 from __future__ import annotations
@@ -25,10 +25,10 @@ import os
 import sys
 import time
 
-from axis.crypto import encrypt, decrypt
-from axis.hash_mfsu import digest
-from axis.totp import generate as totp_generate, verify as totp_verify
-from axis.core import MAGIC, VERSION, HEADER_LEN
+from fractalyx.crypto import encrypt, decrypt
+from fractalyx.hash_mfsu import digest
+from fractalyx.totp import generate as totp_generate, verify as totp_verify
+from fractalyx.core import MAGIC, VERSION, HEADER_LEN
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
