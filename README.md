@@ -1,6 +1,6 @@
 
 
-[![Fractalyx Logo](https://github.com/Fracta-Axis/Fractalyx/blob/main/image-8.jpg)](https://github.com/Fracta-Axis/Fractalyx)
+[![Fractalyx Logo](https://github.com/Fracta-Axis/Fractalyx/blob/main/image-88.jpg)](https://github.com/Fracta-Axis/Fractalyx)
 
 <div align="center">
 
