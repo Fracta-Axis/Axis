@@ -1,9 +1,9 @@
 """
-Interfaz Streamlit — axis.ui.app
+Interfaz Streamlit — fractalyx.ui.app
 
-UI opcional. Requiere: pip install axis-vault[ui]
+UI opcional. Requiere: pip install fractalyx-vault[ui]
 Para ejecutar: streamlit run -m axis.ui.app
-               o: python -m axis.ui
+               o: python -m fractalyx.ui
 
 Contiene las mismas 5 pestañas del fracts_vault.py original,
 refactorizadas para usar la API del paquete en lugar de funciones locales.
@@ -29,11 +29,11 @@ except ImportError as exc:
         "Instala con: pip install axis-vault[ui]"
     ) from exc
 
-from axis.crypto import encrypt, decrypt
-from axis.hash_mfsu import digest as mfsu_hash
-from axis.totp import generate as mfsu_totp
-from axis.kdf import derive as mfsu_kdf
-from axis.crypto.keystream import generate as mfsu_keystream
+from fractalyx.crypto import encrypt, decrypt
+from fractalyx.hash_mfsu import digest as mfsu_hash
+from fractalyx.totp import generate as mfsu_totp
+from fractalyx.kdf import derive as mfsu_kdf
+from fractalyx.crypto.keystream import generate as mfsu_keystream
 from axis.core import (
     DELTA_F, BETA, HURST, DF_PROJ,
     KDF_N, KDF_M, KS_N,
