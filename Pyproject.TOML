@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "axis-vault"
+name = "fractalyx-vault"
 version = "3.0.0"
 description = "Criptografía basada en el Modelo Fractal-Estocástico Unificado (MFSU)"
 readme = "README.md"
@@ -32,14 +32,14 @@ ui = ["streamlit>=1.30", "matplotlib>=3.7"]
 dev = ["pytest>=7.4", "pytest-cov>=4.1", "ruff>=0.1"]
 
 [project.scripts]
-axis-vault = "axis.cli.__main__:main"
+fractalyx-vault = "fractalyx.cli.__main__:main"
 
 [project.urls]
-Homepage = "https://github.com/Fracta-Axis/Axis"
-Repository = "https://github.com/Fracta-Axis/Axis"
+Homepage = "https://github.com/Fracta-Axis/Fractalyx"
+Repository = "https://github.com/Fracta-Axis/Fractalyx"
 
 [tool.hatch.build.targets.wheel]
-packages = ["axis"]
+packages = ["Fractalyx"]
 
 [tool.ruff]
 line-length = 100
