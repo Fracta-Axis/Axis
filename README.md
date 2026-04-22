@@ -36,29 +36,25 @@ Powered by the Unified Fractal-Stochastic Model (MFSU)
 
 All primitives — KDF, stream cipher, hash, TOTP and the revolutionary **FractalShield** defense — derive from the same SPDE:
 
-# Model Equation
+# Fractalyx
 
-The temporal evolution of the field ψ(x,t) is defined by the following stochastic fractional partial differential equation:
+$$\frac{\partial \psi}{\partial t} = -\delta_F (-\Delta)^{\beta/2} \psi + \gamma |\psi|^2 \psi + \sigma \eta(x,t)$$
 
-dψ/dt = -δF (-Δ)^(β/2) ψ + γ |ψ|² ψ + σ η(x,t)
+### Model Parameters:
+*   **Diffusion Coefficient ($\delta_F$):** 0.921
+*   **Fractional Power ($\beta$):** 1.079
+*   **Nonlinear Coupling ($\gamma$):** 0.921 (equal to $\delta_F$)
+*   **Hurst Exponent ($H$):** 0.541
 
-Model Parameters:
------------------
-• Diffusion Coefficient (δF): 0.921
-• Fractional Power (β): 1.079
-• Nonlinear Coupling (γ): 0.921 (equal to δF)
-• Hurst Exponent (H): 0.541
+### Term Definitions:
+*   **$\partial \psi / \partial t$:** Time derivative of the field.
+*   **$(-\Delta)^{\beta/2}$:** Fractional Laplacian operator, representing anomalous diffusion.
+*   **$\gamma |\psi|^2 \psi$:** Nonlinear reaction term.
+*   **$\sigma \eta(x,t)$:** Spatiotemporal stochastic noise.
 
-Term Definitions:
------------------
-• dψ/dt: Time derivative of the field.
-• (-Δ)^(β/2): Fractional Laplacian operator, representing anomalous diffusion.
-• γ |ψ|² ψ: Nonlinear reaction term.
-• σ η(x,t): Spatiotemporal stochastic noise.
-
-
-### The Star Innovation: FractalShield
-The first documented **oracle-free, geometrically escalating layered encryption** for offline files.
+---
+## The Star Innovation: FractalShield
+The first documented **oracle-free**, geometrically escalating layered encryption for offline.
 
 - No verification oracle (attacker never knows if the password is correct until they check every layer)
 - Attacker cost grows **3.5× / 7.5× / 15.5×** per protection level
