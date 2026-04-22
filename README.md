@@ -173,6 +173,81 @@ Este proyecto y el formato `.fyx` están registrados en **Wikidata** como un est
 - **Seguridad:** Cifrado basado en complejidad recursiva y mapeo de coordenadas.
 
 
+## Archivos en este repositorio
+
+| Archivo | Descripción |
+|---------|-------------|
+| `app.py` | Web app completa (Streamlit) |
+| `fractalyx_cli.py` | Herramienta CLI standalone |
+| `demo.fyx` | Archivo cifrado de demostración |
+| `requirements.txt` | Dependencias Python |
+| `main.tex` | Paper académico (LaTeX/arXiv) |
+
+## demo.fyx — Archivo de muestra
+
+El archivo `demo.fyx` está cifrado con FractalShield nivel 2.
+
+**Contraseña:** `fractalyx2026`
+
+Para descifrarlo sin usar la web:
+
+```bash
+pip install numpy scipy
+python fractalyx_cli.py decrypt demo.fyx -p "fractalyx2026"
+```
+
+Para inspeccionarlo sin contraseña:
+
+```bash
+python fractalyx_cli.py inspect demo.fyx
+```
+
+## Formato .fyx
+
+```
+[FRACv1  6B]  Magic header — identificador único
+[VER     1B]  Versión (0x01)
+[LEVEL   1B]  Nivel FractalShield (1/2/3)
+[N       1B]  Número de capas (3/4/5)
+[SALT   16B]  Salt global (aleatorio)
+[IV_ORD 16B]  IV del mapa de orden
+[ORD_LEN 2B]  Longitud del mapa cifrado
+[ORDER  NB ]  Mapa de orden cifrado con clave real
+[MAC    32B]  HMAC-SHA3-256 global
+[LAYERS  NB]  N capas de igual tamaño
+```
+
+Todas las capas tienen **el mismo tamaño** — el atacante no puede
+identificar la capa real por inspección del archivo.
+
+## Niveles FractalShield
+
+| Nivel | Capas | Costo atacante | Uso recomendado |
+|-------|-------|----------------|-----------------|
+| 1 Estándar  | 3 | 3.5× | Documentos personales |
+| 2 Reforzado | 4 | 7.5× | Contratos, datos financieros |
+| 3 Máximo    | 5 | 15.5× | Datos críticos |
+
+## Uso CLI
+
+```bash
+# Cifrar
+python fractalyx_cli.py encrypt archivo.pdf -p "contrasena" -l 2
+
+# Descifrar
+python fractalyx_cli.py decrypt archivo.pdf.fyx -p "contrasena"
+
+# Inspeccionar sin contraseña
+python fractalyx_cli.py inspect archivo.fyx
+```
+
+## Web App
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
 ### Autor
 
 **Miguel Ángel Franco León**  
