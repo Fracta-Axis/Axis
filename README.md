@@ -36,21 +36,28 @@ Powered by the Unified Fractal-Stochastic Model (MFSU)
 
 All primitives — KDF, stream cipher, hash, TOTP and the revolutionary **FractalShield** defense — derive from the same SPDE:
 
-# Fractalyx
+# Stochastic Partial Differential Equation Project
+
+This project models the following **Stochastic Partial Differential Equation (SPDE)**:
 
 $$\frac{\partial \psi}{\partial t} = -\delta_F (-\Delta)^{\beta/2} \psi + \gamma |\psi|^2 \psi + \sigma \eta(x,t)$$
 
-### Model Parameters:
-*   **Diffusion Coefficient ($\delta_F$):** 0.921
-*   **Fractional Power ($\beta$):** 1.079
-*   **Nonlinear Coupling ($\gamma$):** 0.921 (equal to $\delta_F$)
-*   **Hurst Exponent ($H$):** 0.541
+## Model Parameters
 
-### Term Definitions:
-*   **$\partial \psi / \partial t$:** Time derivative of the field.
-*   **$(-\Delta)^{\beta/2}$:** Fractional Laplacian operator, representing anomalous diffusion.
-*   **$\gamma |\psi|^2 \psi$:** Nonlinear reaction term.
-*   **$\sigma \eta(x,t)$:** Spatiotemporal stochastic noise.
+The system is defined with the following parameters:
+
+*   **$\delta_F$ (Fractional Diffusion Coefficient):** $0.921$
+*   **$\beta$ (Fractional Laplacian Power):** $1.079$
+*   **$\gamma$ (Nonlinear Interaction Strength):** $\gamma = \delta_F = 0.921$
+*   **$H$ (Hurst Parameter):** $0.541$
+*   **$\sigma$ (Noise Intensity):** *[Insert your $\sigma$ value here]*
+*   **$\eta(x,t)$:** Stochastic noise term
+
+## Equation Components
+*   **Left side:** Time evolution of the field $\psi(x,t)$.
+*   **$-\delta_F (-\Delta)^{\beta/2} \psi$:** Fractional diffusion (representing anomalous diffusion).
+*   **$\gamma |\psi|^2 \psi$:** Nonlinear, cubic focusing/defocusing term.
+*   **$\sigma \eta(x,t)$:** Gaussian white 
 
 ---
 ## The Star Innovation: FractalShield
