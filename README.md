@@ -36,11 +36,20 @@ Powered by the Unified Fractal-Stochastic Model (MFSU)
 
 All primitives — KDF, stream cipher, hash, TOTP and the revolutionary **FractalShield** defense — derive from the same SPDE:
 
-$$
-\frac{\partial \psi}{\partial t} = -\delta_F (-\Delta)^{\beta/2} \psi + \gamma |\psi|^2 \psi + \sigma \eta(x,t)
-$$
+# Ecuación del Proyecto
 
-with $\delta_F = 0.921$, $\beta = 1.079$, $\gamma = \delta_F$, $H = 0.541$.
+La evolución temporal del campo ψ(x,t) está definida por la siguiente ecuación diferencial parcial fraccionaria estocástica:
+
+dψ/dt = -δF (-Δ)^(β/2) ψ + γ |ψ|² ψ + σ η(x,t)
+
+Valores de los parámetros:
+-------------------------
+• Coeficiente de Difusión (δF) = 0.921
+• Parámetro Fraccionario (β)   = 1.079
+• Acoplamiento No Lineal (γ)   = 0.921 (igual a δF)
+• Exponente de Hurst (H)       = 0.541
+
+
 
 ### The Star Innovation: FractalShield
 The first documented **oracle-free, geometrically escalating layered encryption** for offline files.
