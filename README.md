@@ -47,10 +47,11 @@ $$\frac{\partial \psi}{\partial t} = -\delta_F (-\Delta)^{\beta/2} \psi + \gamma
 *   **Hurst Exponent ($H$):** 0.541
 
 ### Term Definitions:
-*   **$\partial \psi / \partial t$:** Time derivative of the field.
-*   **$(-\Delta)^{\beta/2}$:** Fractional Laplacian operator, representing anomalous diffusion.
-*   **$\gamma |\psi|^2 \psi$:** Nonlinear reaction term.
-*   **$\sigma \eta(x,t)$:** Spatiotemporal stochastic noise.
+*   $\frac{\partial \psi}{\partial t}$: Time derivative of the field.
+*   $(-\Delta)^{\beta/2}$: Fractional Laplacian operator, representing anomalous diffusion.
+*   $\gamma |\psi|^2 \psi$: Nonlinear reaction term.
+*   $\sigma \eta(x,t)$: Spatiotemporal stochastic noise.
+
 
 ---
 ## The Star Innovation: FractalShield
