@@ -1,14 +1,3 @@
-"""
-Interfaz Streamlit — fractalyx.ui.app
-
-UI opcional. Requiere: pip install fractalyx-vault[ui]
-Para ejecutar: streamlit run -m axis.ui.app
-               o: python -m fractalyx.ui
-
-""
-
-from __future__ import annotations
-
 import os
 import time
 
