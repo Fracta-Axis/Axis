@@ -1,22 +1,3 @@
-"""
-CLI de fractalyx-vault — fractalyx.cli.__main__
-
-Entry point instalado como `fractalyx-vault` por pyproject.toml.
-
-Subcomandos:
-    fractalyx-vault encrypt  <archivo> [-o salida] [-p password]
-    fractalyx-vault decrypt  <archivo> [-o salida] [-p password]
-    fractalyx-vault hash     <archivo|texto>
-    fractalyx-vault totp     <secreto>
-    fractalyx-vault info     <archivo.fracta>
-
-Ejemplos:
-    fractalyx-vault encrypt documento.pdf
-    fractalyx-vault decrypt documento.pdf.fracta -o documento_dec.pdf
-    fractalyx-vault hash README.md
-    fractakyx-vault totp MI_SECRETO_COMPARTIDO
-"""
-
 from __future__ import annotations
 
 import argparse
