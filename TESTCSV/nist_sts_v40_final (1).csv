@@ -1,0 +1,16 @@
+Test,Pass,Eligible,Proporcion,p_media,KS_p,Estado,Nota
+01 Frequency (Monobit),10,10,1.0,0.4204,0.7171,PASS,
+02 Block Frequency (M=128),10,10,1.0,0.3643,0.1681,PASS,
+03 Runs,9,10,0.9,0.5926,0.5362,PASS,
+04 Longest Run of Ones,10,10,1.0,0.5178,0.8082,PASS,
+05 Binary Matrix Rank,10,10,1.0,0.4434,0.756,PASS,
+06 DFT / Spectral,9,10,0.9,0.4608,0.8991,PASS,
+07 Non-overlapping Template,10,10,1.0,0.6809,0.0735,PASS,
+08 Overlapping Template,9,10,0.9,0.661,0.0085,PASS,
+09 Maurer Universal,10,10,1.0,0.3207,0.1426,PASS,
+10 Linear Complexity (M=500),10,10,1.0,0.4358,0.6107,PASS,
+11 Serial (m=16),10,10,1.0,0.5327,0.1843,PASS,
+12 Approx Entropy (m=10),10,10,1.0,0.4403,0.4929,PASS,
+13 Cumulative Sums,10,10,1.0,1.0,0.0,PASS,
+14 Random Excursions†,6,8,0.75,0.1023,0.0,PASS (6/8 eligible),J>=500 en 8/10 pares; 2 pares no elegibles (J<500)
+15 Rand. Excursions Variant†,6,8,0.75,0.0658,0.0,BORDERLINE (6/8 eligible),J>=500 en 8/10 pares; 2 fallos individuales (alpha=0.01); recomendado n>=5M
