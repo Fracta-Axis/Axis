@@ -167,6 +167,49 @@ Independent Researcher — Fracta-Fractalyx Project
 > *"The same physical law that governs the fractal structure of the universe can also protect our data."*
 
 ---
+---
+
+## 🛡️ Empirical Validation: NIST SP 800-22 Performance
+
+The core of **FractalShield v4.0** and the **MFSU (Unified Fractal-Stochastic Model)** is built upon the principle that true security must be rooted in immutable geometry. To verify the cryptographic strength and entropy of the generated field, the system was subjected to the full **NIST Special Publication 800-22** statistical test suite.
+
+### 📊 NIST STS Results Summary
+The following data reflects the analysis of 10 independent (Key, IV) pairs, each generating a sequence of $10^6$ bits, using the corrected discretisation formula (Eq. 8').
+
+| Statistical Test | Pass Ratio | Result |
+| :--- | :---: | :--- |
+| 01. Frequency (Monobit) | 10/10 | **PASSED** |
+| 02. Block Frequency (M=128) | 10/10 | **PASSED** |
+| 03. Runs | 9/10 | **PASSED** |
+| 04. Longest Run of Ones | 10/10 | **PASSED** |
+| 05. Binary Matrix Rank | 10/10 | **PASSED** |
+| 06. DFT / Spectral | 9/10 | **PASSED** |
+| 07. Non-overlapping Template | 10/10 | **PASSED** |
+| 08. Overlapping Template | 9/10 | **PASSED** |
+| 09. Maurer Universal | 10/10 | **PASSED** |
+| 10. Linear Complexity (M=500) | 10/10 | **PASSED** |
+| 11. Serial (m=16) | 10/10 | **PASSED** |
+| 12. Approximate Entropy | 10/10 | **PASSED** |
+| 13. Cumulative Sums | 10/10 | **PASSED** |
+| 14. Random Excursions | 9/9† | **PASSED** |
+| 15. Random Excursions Variant | 9/9† | **PASSED** |
+
+*† Tests 14-15 apply only to sequences with a sufficient number of zero-crossings, as per NIST standards.*
+
+### 💎 Key Statistical Insights
+* **Total Battery Pass:** 15/15 tests successfully cleared.
+* **P-Value Distribution:** The mean p-values across all tests remain stable near 0.5 (overall average $\approx 0.46$), confirming a uniform distribution and the absence of structural bias in the fractal field.
+* **Entropy Stability:** Shannon entropy approaches the theoretical ideal for a pseudorandom generator (PRG), ensuring high unpredictability.
+
+### 📂 Reproducibility & Audit
+The raw evidence for these tests is provided in this repository for public audit:
+* [`nist_sts_v40_final.csv`](./nist_sts_v40_final.csv): Comprehensive pass/fail summary and KS p-values.
+* [`nist_sts_v40_pvalues.csv`](./nist_sts_v40_pvalues.csv): Individual p-values for each parameter and test run.
+
+> **Scientific Note:** "The geometry of the MFSU equation ensures that entropy is preserved through empirical injectivity, providing a robust foundation for oracle-free verification and offline brute-force resistance." — *FractalShield v4.0 Technical Paper*.
+
+---
+
 
 ### 💠 Wikidata & Standards
 
