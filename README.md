@@ -293,7 +293,7 @@ python fractalyx_cli.py inspect archivo.fyx
 pip install -r requirements.txt
 streamlit run app.py
 ```
-
+Aquí están los principios del universo fractal; ahora ve y construye tu propia libertad".
 ### Autor
 
 **Miguel Ángel Franco León**  
