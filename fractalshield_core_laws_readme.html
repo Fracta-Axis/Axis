@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --void:#0a0a0b;
+  --deep:#111114;
+  --surface:#17171c;
+  --panel:#1e1e25;
+  --edge:#2a2a35;
+  --dim:#3a3a4a;
+  --muted:#7a7a9a;
+  --text:#c8c8e0;
+  --bright:#eeeeff;
+  --gold:#f0c040;
+  --gold2:#f5d060;
+  --teal:#40d0b0;
+  --red:#e05060;
+  --blue:#5090e0;
+  --purple:#9070e0;
+  --mono:'JetBrains Mono',monospace;
+  --sans:'Space Grotesk',sans-serif;
+}
+body{
+  background:var(--void);
+  color:var(--text);
+  font-family:var(--sans);
+  font-size:14px;
+  line-height:1.7;
+  padding:0 0 60px;
+}
+.page{max-width:860px;margin:0 auto;padding:0 24px}
+
+/* HERO */
+.hero{
+  border-bottom:1px solid var(--edge);
+  padding:48px 0 36px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-60px;right:-80px;
+  width:320px;height:320px;
+  background:radial-gradient(circle,rgba(90,70,200,0.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(240,192,64,0.08);
+  border:1px solid rgba(240,192,64,0.25);
+  border-radius:4px;
+  padding:4px 10px;
+  font-family:var(--mono);
+  font-size:11px;
+  color:var(--gold);
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{
+  font-family:var(--mono);
+  font-size:38px;
+  font-weight:700;
+  color:var(--bright);
+  letter-spacing:-0.02em;
+  line-height:1.1;
+  margin-bottom:8px;
+}
+.hero h1 span{color:var(--gold)}
+.hero-sub{
+  font-size:15px;
+  color:var(--muted);
+  font-weight:300;
+  margin-bottom:28px;
+  max-width:560px;
+}
+.hero-meta{
+  display:flex;gap:24px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11px;color:var(--muted);
+}
+.hero-meta span{display:flex;align-items:center;gap:6px}
+.hero-meta span::before{content:'';display:block;width:4px;height:4px;border-radius:50%;background:var(--dim)}
+
+/* ABSTRACT BLOCK */
+.abstract{
+  margin:32px 0;
+  background:var(--deep);
+  border:1px solid var(--edge);
+  border-left:3px solid var(--gold);
+  padding:20px 24px;
+  border-radius:0 6px 6px 0;
+}
+.abstract-label{
+  font-family:var(--mono);font-size:10px;color:var(--gold);
+  letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;
+}
+.abstract p{color:var(--text);font-size:13.5px;line-height:1.75}
+
+/* SECTION HEADERS */
+.section{margin:40px 0 20px}
+.section-head{
+  display:flex;align-items:center;gap:12px;margin-bottom:20px;
+}
+.section-num{
+  font-family:var(--mono);font-size:10px;color:var(--muted);
+  border:1px solid var(--dim);padding:3px 7px;border-radius:3px;
+  letter-spacing:0.1em;
+}
+.section-title{
+  font-family:var(--mono);font-size:16px;font-weight:700;
+  color:var(--bright);letter-spacing:-0.01em;
+}
+.section-line{flex:1;height:1px;background:var(--edge)}
+
+/* THE 4 LAWS — main attraction */
+.laws-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:0}
+.law{
+  background:var(--panel);
+  border:1px solid var(--edge);
+  padding:24px 22px;
+  position:relative;
+  transition:border-color 0.2s,background 0.2s;
+  cursor:default;
+}
+.law:hover{border-color:var(--dim);background:var(--surface)}
+.law:nth-child(1){border-radius:8px 0 0 0}
+.law:nth-child(2){border-radius:0 8px 0 0}
+.law:nth-child(3){border-radius:0 0 0 8px}
+.law:nth-child(4){border-radius:0 0 8px 0}
+
+.law-id{
+  font-family:var(--mono);font-size:10px;letter-spacing:0.1em;
+  text-transform:uppercase;margin-bottom:12px;
+  display:flex;align-items:center;gap:8px;
+}
+.law-badge{
+  padding:2px 8px;border-radius:3px;font-size:10px;
+  font-family:var(--mono);font-weight:700;
+}
+.c1 .law-badge{background:rgba(64,208,176,0.1);color:var(--teal);border:1px solid rgba(64,208,176,0.2)}
+.c2 .law-badge{background:rgba(144,112,224,0.1);color:var(--purple);border:1px solid rgba(144,112,224,0.2)}
+.c3 .law-badge{background:rgba(240,192,64,0.1);color:var(--gold);border:1px solid rgba(240,192,64,0.2)}
+.c4 .law-badge{background:rgba(80,144,224,0.1);color:var(--blue);border:1px solid rgba(80,144,224,0.2)}
+.law-name{
+  font-family:var(--mono);font-size:15px;font-weight:700;
+  color:var(--bright);margin-bottom:8px;letter-spacing:-0.01em;
+}
+.c1 .law-name{color:var(--teal)}
+.c2 .law-name{color:var(--purple)}
+.c3 .law-name{color:var(--gold)}
+.c4 .law-name{color:var(--blue)}
+.law-formal{
+  font-family:var(--mono);font-size:11px;color:var(--muted);
+  background:var(--deep);border:1px solid var(--edge);
+  padding:8px 10px;border-radius:4px;margin:10px 0;
+  line-height:1.5;
+}
+.law-formal em{color:var(--text);font-style:normal}
+.law-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-top:8px}
+.law-desc strong{color:var(--text);font-weight:500}
+
+/* Divider between law grid sections */
+.law-divider{height:2px;background:var(--void);margin:0}
+
+/* THEOREM INHERITANCE BLOCK */
+.theorems{
+  background:var(--panel);border:1px solid var(--edge);
+  border-radius:8px;padding:20px 24px;margin:20px 0;
+}
+.theorem-row{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:10px 0;border-bottom:1px solid var(--edge);
+}
+.theorem-row:last-child{border-bottom:none}
+.thm-id{
+  font-family:var(--mono);font-size:10px;color:var(--muted);
+  min-width:80px;padding-top:2px;
+}
+.thm-name{font-family:var(--mono);font-size:13px;color:var(--bright);font-weight:500}
+.thm-basis{font-size:12px;color:var(--muted);margin-top:3px}
+.status-dot{
+  width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:5px;
+}
+.proved{background:#40d080}
+.proved-rom{background:#5090e0}
+
+/* CODE BLOCK */
+pre{
+  background:var(--deep);border:1px solid var(--edge);
+  border-radius:6px;padding:18px 20px;
+  font-family:var(--mono);font-size:12px;
+  color:var(--text);overflow-x:auto;line-height:1.6;
+  margin:16px 0;
+}
+.kw{color:var(--purple);font-weight:500}
+.cm{color:var(--dim)}
+.str{color:var(--teal)}
+.fn{color:var(--gold)}
+.num{color:var(--blue)}
+
+/* COMPARISON TABLE */
+.cmp-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
+.cmp-table th{
+  font-family:var(--mono);font-size:11px;letter-spacing:0.06em;
+  color:var(--muted);text-align:left;border-bottom:1px solid var(--edge);
+  padding:8px 12px;text-transform:uppercase;
+}
+.cmp-table td{
+  padding:10px 12px;border-bottom:1px solid var(--edge);
+  color:var(--text);
+}
+.cmp-table tr:last-child td{border-bottom:none}
+.cmp-table td:first-child{font-family:var(--mono);font-size:12px;color:var(--bright)}
+.yes{color:#40d080;font-family:var(--mono);font-size:12px}
+.no{color:var(--red);font-family:var(--mono);font-size:12px}
+.partial{color:var(--gold);font-family:var(--mono);font-size:12px}
+.highlight-row td{background:rgba(240,192,64,0.04);border-top:1px solid rgba(240,192,64,0.15);border-bottom:1px solid rgba(240,192,64,0.15)}
+.highlight-row td:first-child{color:var(--gold)}
+
+/* INSTANTIATION EXAMPLES */
+.inst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.inst-card{
+  background:var(--panel);border:1px solid var(--edge);
+  border-radius:6px;padding:16px;
+}
+.inst-tag{
+  font-family:var(--mono);font-size:10px;color:var(--muted);
+  letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px;
+}
+.inst-name{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--bright);margin-bottom:6px}
+.inst-desc{font-size:12px;color:var(--muted);line-height:1.55}
+
+/* COST ESCALATION VIZ */
+.cost-bars{margin:16px 0}
+.cost-row{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.cost-label{font-family:var(--mono);font-size:11px;color:var(--muted);min-width:90px}
+.cost-bar-wrap{flex:1;background:var(--deep);border:1px solid var(--edge);border-radius:3px;height:22px;overflow:hidden;position:relative}
+.cost-bar{height:100%;border-radius:2px;transition:width 0.3s}
+.cost-val{font-family:var(--mono);font-size:11px;color:var(--bright);min-width:48px;text-align:right}
+.user-bar{background:rgba(64,208,176,0.3);border-right:2px solid var(--teal)}
+.atk-bar{background:rgba(224,80,96,0.25);border-right:2px solid var(--red)}
+
+/* OPEN PROBLEMS */
+.problems{display:flex;flex-direction:column;gap:8px;margin:16px 0}
+.problem{
+  display:flex;gap:12px;align-items:flex-start;
+  background:var(--panel);border:1px solid var(--edge);
+  border-radius:6px;padding:12px 14px;
+}
+.prob-id{
+  font-family:var(--mono);font-size:10px;color:var(--red);
+  min-width:24px;padding-top:2px;
+}
+.prob-text{font-size:13px;color:var(--text)}
+.prob-text strong{color:var(--bright);font-weight:500}
+
+/* FOOTER */
+.footer-block{
+  margin-top:40px;padding:20px 24px;
+  background:var(--deep);border:1px solid var(--edge);border-radius:8px;
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.footer-block .gh-link{
+  font-family:var(--mono);font-size:12px;color:var(--teal);
+  text-decoration:none;border-bottom:1px dashed rgba(64,208,176,0.3);
+}
+.footer-text{font-size:13px;color:var(--muted);flex:1}
+
+/* Utility */
+.mono{font-family:var(--mono);font-size:12px}
+.tag{
+  display:inline-block;font-family:var(--mono);font-size:10px;
+  padding:2px 7px;border-radius:3px;letter-spacing:0.06em;
+  background:rgba(255,255,255,0.05);border:1px solid var(--edge);
+  color:var(--muted);
+}
+p+p{margin-top:10px}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge"><span class="dot"></span>preprint v1.0 · May 2026 · Not peer-reviewed</div>
+  <h1>Fractal<span>Shield</span></h1>
+  <div class="hero-sub">A core-agnostic framework for oracle-free layered encryption with geometric cost escalation. Any function satisfying the four laws below inherits the full security proofs.</div>
+  <div class="hero-meta">
+    <span>Miguel Angel Franco León</span>
+    <span>Fracta-Axis Project</span>
+    <span>github.com/Fracta-Axis/Fractalyx</span>
+  </div>
+</div>
+
+<!-- ABSTRACT -->
+<div class="abstract">
+  <div class="abstract-label">Abstract</div>
+  <p>FractalShield simultaneously achieves <strong>oracle-free verification (OFV)</strong> — the attacker cannot determine password correctness without spending the full key-derivation cost per layer — <strong>geometric cost escalation</strong> (3.5×, 7.5×, 15.5× baseline per level), <strong>statistical indistinguishability</strong> of real versus decoy ciphertext layers, and <strong>serverless offline operation</strong>.</p>
+  <p style="margin-top:10px">The framework is intentionally core-agnostic. Any function satisfying Definition 3.1 (C1–C4) can serve as the cryptographic core without altering the four security theorems.</p>
+</div>
+
+<!-- THE 4 LAWS -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">§ 3.1</span>
+    <span class="section-title">The Four Laws — Definition 3.1</span>
+    <span class="section-line"></span>
+  </div>
+
+  <p style="font-size:13px;color:var(--muted);margin-bottom:20px;max-width:640px">
+    A function <code style="font-family:var(--mono);color:var(--bright);background:var(--panel);padding:1px 5px;border-radius:3px">F : {0,1}^κ × {0,1}^128 × ℕ → {0,1}*</code> is a valid FractalShield core if and only if it satisfies all four properties below. Any such F inherits Theorems 5.1, 5.2, 5.5, and 5.6 without modification.
+  </p>
+
+  <div class="laws-grid">
+
+    <!-- C1 -->
+    <div class="law c1">
+      <div class="law-id"><span class="law-badge">C1</span> <span style="font-size:11px;color:var(--dim);letter-spacing:0.08em">INPUT SENSITIVITY</span></div>
+      <div class="law-name">Avalanche Property</div>
+      <div class="law-formal">∀ k ≠ k′: <em>diffBits(F(k,IV,L), F(k′,IV,L)) ≈ 50%</em></div>
+      <div class="law-desc">A single-bit change in the key must flip approximately half of the output bits. This ensures that <strong>no partial information about the key</strong> leaks from comparing ciphertexts. Without this, an adversary could do hill-climbing over keyspace.</div>
+    </div>
+
+    <!-- C2 -->
+    <div class="law c2">
+      <div class="law-id"><span class="law-badge">C2</span> <span style="font-size:11px;color:var(--dim);letter-spacing:0.08em">OUTPUT PSEUDORANDOMNESS</span></div>
+      <div class="law-name">PRG Property</div>
+      <div class="law-formal"><em>F(k, IV, ·) ≈_c U_L</em> for all PPT distinguishers</div>
+      <div class="law-desc">The output must be computationally indistinguishable from uniform random. This is the foundation for <strong>layer statistical indistinguishability</strong> — an attacker cannot tell which layer holds the real plaintext by analyzing ciphertext bytes.</div>
+    </div>
+
+    <!-- C3 -->
+    <div class="law c3">
+      <div class="law-id"><span class="law-badge">C3</span> <span style="font-size:11px;color:var(--dim);letter-spacing:0.08em">COST CONTROLLABILITY</span></div>
+      <div class="law-name">Parameterised Cost</div>
+      <div class="law-formal"><em>cost(F(k, IV, L; M))</em> is <em>monotone increasing in M</em></div>
+      <div class="law-desc">The evaluation cost must be tunable via a parameter M. The framework uses this to assign cost <span class="mono">M₀ · 2ⁱ</span> to layer i, forcing the attacker to pay the <strong>geometric sum 2^N − 1</strong> per password guess.</div>
+    </div>
+
+    <!-- C4 -->
+    <div class="law c4">
+      <div class="law-id"><span class="law-badge">C4</span> <span style="font-size:11px;color:var(--dim);letter-spacing:0.08em">MEMORY HARDNESS</span></div>
+      <div class="law-name">Ω(M) RAM Requirement</div>
+      <div class="law-formal"><em>RAM(F at param M) = Ω(M)</em></div>
+      <div class="law-desc">Evaluating F must require memory proportional to M, bounding parallel GPU attacks. A device with G bytes of RAM can run at most <span class="mono">⌊G/M⌋</span> threads simultaneously — this is what makes brute-force <strong>physically expensive</strong> at scale.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- WHY THESE 4 AND NOT OTHERS -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">§ why</span>
+    <span class="section-title">Why exactly these four</span>
+    <span class="section-line"></span>
+  </div>
+
+  <div style="background:var(--panel);border:1px solid var(--edge);border-radius:8px;padding:20px 24px;margin-bottom:20px">
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <tr style="border-bottom:1px solid var(--edge)">
+        <th style="text-align:left;padding:6px 12px;font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em">Law</th>
+        <th style="text-align:left;padding:6px 12px;font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em">If violated</th>
+        <th style="text-align:left;padding:6px 12px;font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em">Theorem that breaks</th>
+      </tr>
+      <tr style="border-bottom:1px solid var(--edge)">
+        <td style="padding:10px 12px;font-family:var(--mono);color:var(--teal)">C1</td>
+        <td style="padding:10px 12px;color:var(--text)">Key bits leak via differential ciphertext comparison</td>
+        <td style="padding:10px 12px;font-family:var(--mono);font-size:11px;color:var(--muted)">IND-CCA2 (5.6), PRG (5.4)</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--edge)">
+        <td style="padding:10px 12px;font-family:var(--mono);color:var(--purple)">C2</td>
+        <td style="padding:10px 12px;color:var(--text)">Attacker distinguishes real layer from decoys statistically</td>
+        <td style="padding:10px 12px;font-family:var(--mono);font-size:11px;color:var(--muted)">OFV (5.5), IND-CCA2 (5.6)</td>
+      </tr>
+      <tr style="border-bottom:1px solid var(--edge)">
+        <td style="padding:10px 12px;font-family:var(--mono);color:var(--gold)">C3</td>
+        <td style="padding:10px 12px;color:var(--text)">Geometric escalation collapses; attacker pays only C_base × N</td>
+        <td style="padding:10px 12px;font-family:var(--mono);font-size:11px;color:var(--muted)">Lemma 5.4, OFV (5.5)</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px;font-family:var(--mono);color:var(--blue)">C4</td>
+        <td style="padding:10px 12px;color:var(--text)">GPU farms run 10⁵ parallel threads; cost multiplier becomes vacuous</td>
+        <td style="padding:10px 12px;font-family:var(--mono);font-size:11px;color:var(--muted)">Security parameter (practical)</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- THE GEOMETRIC COST PRINCIPLE -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">§ key insight</span>
+    <span class="section-title">The asymmetry principle</span>
+    <span class="section-line"></span>
+  </div>
+
+  <p style="font-size:13px;color:var(--muted);margin-bottom:16px">The core architectural idea: the legitimate user decrypts exactly one layer. The attacker must decrypt all N layers at escalating cost because they cannot know which layer holds the real plaintext (the layer order is encrypted under the real key).</p>
+
+  <div class="cost-bars">
+    <div style="font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:12px;letter-spacing:0.06em;text-transform:uppercase">Level 3 — Maximum (5 layers)</div>
+
+    <div style="font-size:11px;color:var(--teal);font-family:var(--mono);margin-bottom:8px">Legitimate user</div>
+    <div class="cost-row">
+      <div class="cost-label">Layer 0 (real)</div>
+      <div class="cost-bar-wrap"><div class="cost-bar user-bar" style="width:6.25%"></div></div>
+      <div class="cost-val">1× C_base</div>
+    </div>
+
+    <div style="font-size:11px;color:var(--red);font-family:var(--mono);margin:12px 0 8px">Attacker (must check all layers)</div>
+    <div class="cost-row">
+      <div class="cost-label">Layer 0</div>
+      <div class="cost-bar-wrap"><div class="cost-bar atk-bar" style="width:3.2%"></div></div>
+      <div class="cost-val">1×</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">Layer 1</div>
+      <div class="cost-bar-wrap"><div class="cost-bar atk-bar" style="width:6.4%"></div></div>
+      <div class="cost-val">2×</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">Layer 2</div>
+      <div class="cost-bar-wrap"><div class="cost-bar atk-bar" style="width:12.9%"></div></div>
+      <div class="cost-val">4×</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">Layer 3</div>
+      <div class="cost-bar-wrap"><div class="cost-bar atk-bar" style="width:25.8%"></div></div>
+      <div class="cost-val">8×</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-label">Layer 4</div>
+      <div class="cost-bar-wrap"><div class="cost-bar atk-bar" style="width:51.6%"></div></div>
+      <div class="cost-val">16×</div>
+    </div>
+    <div style="border-top:1px solid var(--edge);padding-top:8px;margin-top:8px;display:flex;justify-content:space-between">
+      <span style="font-family:var(--mono);font-size:11px;color:var(--muted)">Total attacker cost per attempt</span>
+      <span style="font-family:var(--mono);font-size:13px;color:var(--red);font-weight:700">31× C_base</span>
+    </div>
+  </div>
+
+  <div style="margin-top:12px">
+    <div style="font-family:var(--mono);font-size:11px;background:var(--deep);border:1px solid var(--edge);border-radius:4px;padding:10px 14px;color:var(--muted)">
+      C_attacker(ℓ) = C_base · (<span style="color:var(--bright)">2^N(ℓ) − 1</span>) &nbsp;[Lemma 5.4] &nbsp;·&nbsp; Level 1: <span style="color:var(--text)">3.5×</span> &nbsp;Level 2: <span style="color:var(--text)">7.5×</span> &nbsp;Level 3: <span style="color:var(--text)">15.5×</span>
+    </div>
+  </div>
+</div>
+
+<!-- INHERITED THEOREMS -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">§ inheritance</span>
+    <span class="section-title">What every valid core inherits</span>
+    <span class="section-line"></span>
+  </div>
+
+  <p style="font-size:13px;color:var(--muted);margin-bottom:16px">If your function F satisfies C1–C4, all four theorems apply immediately, regardless of the internal structure of F.</p>
+
+  <div class="theorems">
+    <div class="theorem-row">
+      <span class="status-dot proved"></span>
+      <div>
+        <div class="thm-id">Thm 5.1</div>
+        <div class="thm-name">Integrity</div>
+        <div class="thm-basis">Any PPT adversary producing a modified ciphertext that passes MAC has negl(κ) advantage. Basis: SUF-CMA of HMAC-SHA3-256.</div>
+      </div>
+    </div>
+    <div class="theorem-row">
+      <span class="status-dot proved"></span>
+      <div>
+        <div class="thm-id">Thm 5.2</div>
+        <div class="thm-name">IV Uniqueness</div>
+        <div class="thm-basis">Two encryptions under the same password reuse an IV with probability ≤ n²/2¹²⁸. Basis: birthday bound.</div>
+      </div>
+    </div>
+    <div class="theorem-row">
+      <span class="status-dot proved"></span>
+      <div>
+        <div class="thm-id">Thm 5.5</div>
+        <div class="thm-name">Oracle-Free Verification (OFV)</div>
+        <div class="thm-basis">No PPT adversary can determine password correctness without spending C_attacker(ℓ) per attempt. Requires Thm 5.1 + C2 + false-positive bound 5/2⁴⁰.</div>
+      </div>
+    </div>
+    <div class="theorem-row">
+      <span class="status-dot proved-rom"></span>
+      <div>
+        <div class="thm-id">Thm 5.6</div>
+        <div class="thm-name">IND-CCA2 (under ROM)</div>
+        <div class="thm-basis">Adv_IND-CCA2(A) ≤ 2q²/2²⁵⁶ + 5/2⁴⁰. Four-game hybrid proof. Standard-model reduction is Open Problem 4.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:16px;margin-top:10px;font-size:12px;color:var(--muted);font-family:var(--mono)">
+    <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#40d080;margin-right:6px;vertical-align:middle"></span>proved (standard model)</span>
+    <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#5090e0;margin-right:6px;vertical-align:middle"></span>proved (ROM)</span>
+  </div>
+</div>
+
+<!-- INSTANTIATION CONTRACT -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">§ interface</span>
+    <span class="section-title">How to build a new core</span>
+    <span class="section-line"></span>
+  </div>
+
+  <p style="font-size:13px;color:var(--muted);margin-bottom:16px">The only required interface. Implement this, verify C1–C4, and your core drops directly into the FractalShield construction.</p>
+
+<pre><span class="cm"># Minimal contract for a valid FractalShield core</span>
+<span class="cm"># Type: F : bytes × bytes × int → bytes</span>
+
+<span class="kw">class</span> <span class="fn">FractalShieldCore</span>(Protocol):
+
+    <span class="kw">def</span> <span class="fn">derive</span>(<span class="str">self</span>, key: bytes, iv: bytes, M: int) -> bytes:
+        <span class="cm">"""
+        Derive key material.
+        
+        C1 — Input sensitivity:
+            diffbits(derive(k, iv, M), derive(k', iv, M)) ≈ 0.50
+            for any k ≠ k'  (measurable; must hold empirically)
+
+        C2 — Output pseudorandomness:
+            derive(k, iv, M) ≈_c Uniform({0,1}^|output|)
+            for all PPT distinguishers  (provable or empirical via NIST STS)
+
+        C3 — Cost controllability:
+            time(derive(k, iv, M)) is monotone increasing in M
+            (required for geometric layer cost escalation)
+
+        C4 — Memory hardness:
+            peak_ram(derive(k, iv, M)) = Ω(M)
+            (required to bound parallel GPU attacks)
+
+        Returns: key material of appropriate length for stream cipher seed.
+        """</span>
+        ...
+
+<span class="cm"># The framework uses your core like this — you own only derive():</span>
+<span class="cm"># layer_i_key = core.derive(password, salt_i, M0 * 2**i)</span></pre>
+
+  <div class="inst-grid">
+    <div class="inst-card">
+      <div class="inst-tag">Instantiation · This Paper</div>
+      <div class="inst-name">MFSU-Crypt</div>
+      <div class="inst-desc">Fractional stochastic PDE core. 8 MB scratchpad. ≈1.9 attempts/sec. Fractal-field entropy bound proven via injectivity chain.</div>
+    </div>
+    <div class="inst-card">
+      <div class="inst-tag">Instantiation · Appendix D</div>
+      <div class="inst-name">Argon2id-Shield</div>
+      <div class="inst-desc">Drops Argon2id in as F. 64 MB scratchpad. 10+ years of public cryptanalysis. Proves the framework is independent of the MFSU physics.</div>
+    </div>
+    <div class="inst-card" style="border-style:dashed;opacity:0.65">
+      <div class="inst-tag">Future · Open</div>
+      <div class="inst-name">Your Core Here</div>
+      <div class="inst-desc">Reaction-diffusion systems, Lorenz flows, scrypt, bcrypt, novel constructions. Any function satisfying C1–C4 qualifies.</div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARISON -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">§ 9</span>
+    <span class="section-title">Comparison with existing constructions</span>
+    <span class="section-line"></span>
+  </div>
+
+  <table class="cmp-table">
+    <thead>
+      <tr>
+        <th>Construction</th>
+        <th>IND-CCA2</th>
+        <th>Memory-hard KDF</th>
+        <th>No verif. oracle</th>
+        <th>Geometric cost esc.</th>
+        <th>Core-agnostic</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>AES-256-GCM</td>
+        <td class="yes">Yes</td><td class="no">Ext.</td><td class="no">No</td><td class="no">No</td><td class="no">No</td>
+      </tr>
+      <tr>
+        <td>ChaCha20-Poly1305</td>
+        <td class="yes">Yes</td><td class="no">Ext.</td><td class="no">No</td><td class="no">No</td><td class="no">No</td>
+      </tr>
+      <tr>
+        <td>Argon2 + AES</td>
+        <td class="partial">Partial</td><td class="yes">Yes</td><td class="no">No</td><td class="no">No</td><td class="no">No</td>
+      </tr>
+      <tr>
+        <td>Honey Encryption</td>
+        <td class="yes">Yes</td><td class="no">No</td><td class="partial">Partial</td><td class="no">No</td><td class="no">No</td>
+      </tr>
+      <tr class="highlight-row">
+        <td>FractalShield ★</td>
+        <td class="yes">Yes (ROM)</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- OPEN PROBLEMS -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-num">§ 10</span>
+    <span class="section-title">Open problems</span>
+    <span class="section-line"></span>
+  </div>
+
+  <div class="problems">
+    <div class="problem">
+      <div class="prob-id">OP1</div>
+      <div class="prob-text"><strong>Analytical injectivity of G.</strong> Theorem 6.5 is conditional on empirical Lemma 6.2. Rigorous algebraic proof of injectivity needed. Suggested: Schwartz-Zippel applied to the polynomial approximation of the cubic nonlinearity.</div>
+    </div>
+    <div class="problem">
+      <div class="prob-id">OP2</div>
+      <div class="prob-text"><strong>DAG memory-hardness tight bound.</strong> Phase 2 scratchpad coverage is 20–53% empirically. Proof of Ω(4 MB) unconditionally under the parallel ROM is needed.</div>
+    </div>
+    <div class="problem">
+      <div class="prob-id">OP3</div>
+      <div class="prob-text"><strong>Replay-attack mitigation.</strong> Valid ciphertexts from other sessions are currently accepted. Fix: include session-context identifier in MAC derivation. Does not affect any threat model in this paper.</div>
+    </div>
+    <div class="problem">
+      <div class="prob-id">OP4</div>
+      <div class="prob-text"><strong>IND-CCA2 without ROM.</strong> Theorem 5.6 assumes the Random Oracle Model. Standard-model reduction is desirable for high-assurance deployments.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER / CITE -->
+<div class="footer-block">
+  <div class="footer-text">
+    <strong style="color:var(--bright)">Cite as:</strong> Franco León, M.A. (2026). <em>FractalShield: A Core-Agnostic Framework for Oracle-Free Layered Encryption with Geometric Cost Escalation.</em> Preprint v1.0.
+  </div>
+  <a class="gh-link" href="https://github.com/Fracta-Axis/Fractalyx">github.com/Fracta-Axis/Fractalyx →</a>
+</div>
+
+</div>
+</body>
+</html>
