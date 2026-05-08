@@ -250,12 +250,12 @@ If you use these vectors in your research, please cite:
  
 ```bibtex
 @misc{fractalshield2026,
-  title   = {FractalShield: Oracle-Free Verification with Geometric Cost Escalation for Offline Brute-Force Resistance},
+  title   = {Technical Note: The Four Core Laws of FractalShield — A Framework for Oracle-Free Verification and Geometric Cost Escalation},
   author  = {Miguel Angel Franco Leon},
   year    = {2026},
   note    = {Preprint v1.0},
-  doi     = {10.5281/zenodo.19974049},
-  url     = {https://zenodo.org/records/19974049}
+  doi     = {10.5281/zenodo.20079092},
+  url     = {https://zenodo.org/records/20079092}
 }
 ```
  
