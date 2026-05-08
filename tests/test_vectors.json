@@ -1,0 +1,60 @@
+{
+  "V1_KDF": {
+    "password_hex": "4672616374616c536869656c645f54657374566563746f725f7631",
+    "salt_hex": "000102030405060708090a0b0c0d0e0f",
+    "steps": 256,
+    "output_hex": "6b012f37946ee59d7f81ca6bd4ce7788400197d7774389b4adfc8bc2ef7af34efb4cff7b0ce401460612f1e53361d20544c5df5888503fb5f1820fe4be9d8c0d1f28239e575529f59fe18a3b31ac72079fea9100f3ca5b5457ac70e32499645a",
+    "output_len": 96
+  },
+  "V2_KDF_2M0": {
+    "password_hex": "4672616374616c536869656c645f54657374566563746f725f7631",
+    "salt_hex": "000102030405060708090a0b0c0d0e0f",
+    "steps": 512,
+    "output_hex": "fd490ce82498cae82094bf8ce4acc76b514251c2528f63c744f80b8b9f93d017613fa31c122a8932265d5092b22575fc795c8f6c4f79f0ee6a3d4328cc45d2eba49551bcf2e455d1c55e1d5363e916a82e0ab1474742be8f5a9b8d09a4e169e3"
+  },
+  "V3_KEYSTREAM": {
+    "dk_hex": "6b012f37946ee59d7f81ca6bd4ce7788400197d7774389b4adfc8bc2ef7af34efb4cff7b0ce401460612f1e53361d20544c5df5888503fb5f1820fe4be9d8c0d",
+    "iv_hex": "101112131415161718191a1b1c1d1e1f",
+    "length": 64,
+    "keystream_hex": "f62edfa120cb92c4be0f2723c3e4534e25d83b924b7c1649bbbf88e4c36f975f1b18b5d3b4370cd1d40e401c5b13b76adf3e0b0586ec09aeb211e66385d26831"
+  },
+  "V4_AVALANCHE": {
+    "bits_changed": 249,
+    "total_bits": 512,
+    "percentage": 48.63,
+    "ks_original_hex": "f62edfa120cb92c4be0f2723c3e4534e25d83b924b7c1649bbbf88e4c36f975f1b18b5d3b4370cd1d40e401c5b13b76adf3e0b0586ec09aeb211e66385d26831",
+    "ks_modified_hex": "5517da2fb73e539955b64b54d52b11b019f2a8981aacebc89793b98af4b22f38534daadbda36bfdf09ac96b49a0ecd615552928a3daceb3232ea8351fc126840"
+  },
+  "V5_MAGIC": {
+    "magic_hex": "4d46535504",
+    "padded_hex": "4d4653550448656c6c6f2c2041627973732e0e0e0e0e0e0e0e0e0e0e0e0e0e0e",
+    "check_correct": true,
+    "check_wrong": false
+  },
+  "V6_HMAC": {
+    "k_mac_hex": "68f4fc3ed2bfc114918b9be9680c081abba83c81ad20f873cdaafc9203a4c5db",
+    "body_hex": "4672616374616c536869656c64207465737420626f6479",
+    "tag_hex": "6f22e11ef9b35ddb0230442122e590b26de385a860efe705b29128f23a362348"
+  },
+  "V7_NSTEPS": {
+    "dk_hex": "6b012f37946ee59d7f81ca6bd4ce7788400197d7774389b4adfc8bc2ef7af34efb4cff7b0ce401460612f1e53361d20544c5df5888503fb5f1820fe4be9d8c0d",
+    "iv_hex": "101112131415161718191a1b1c1d1e1f",
+    "h0": 38,
+    "nsteps": 86
+  },
+  "V8_FIELD_NORM": {
+    "max_norm_10steps": 1.8528,
+    "all_norms": [
+      1.8528,
+      1.6305,
+      1.1951,
+      0.8833,
+      0.9032,
+      0.9078,
+      0.8515,
+      0.7939,
+      0.7861,
+      0.736
+    ]
+  }
+}
