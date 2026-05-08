@@ -265,8 +265,4 @@ If you use these vectors in your research, please cite:
   <sub>MFSU-Crypt Reference Vectors v1.0 · Annex to FractalShield Preprint v1.0</sub>
 </p>
 
----
 
-<p align="center">
-  <sub>MFSU-Crypt Reference Vectors v1.0 · Annex to FractalShield Preprint v1.0</sub>
-</p>
