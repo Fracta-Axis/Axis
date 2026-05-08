@@ -5,7 +5,7 @@
 [![Preprint v1.0](https://img.shields.io/badge/Preprint-v1.0-green)](https://github.com/Fracta-Axis/Fractalyx)
 [![Test Vectors](https://img.shields.io/badge/Test%20Vectors-v1.0-orange)](test_vectors.json)
 
-> **MFSU-Crypt** is an experimental stream cipher and key-derivation framework based on fractal field dynamics, described in the *FractalShield Preprint v1.0*. This repository contains the canonical reference implementation (`mfsu_crypt_ref.py`) and the official test vectors (Appendix E).
+> **MFSU-Crypt** is an experimental stream cipher and key-derivation framework based on fractal field dynamics, described in the *FractalShield Preprint v1.0*. This repository contains the canonical reference implementation (`mfsu_crypt_ref.py`) and the official test vectors.
 
 ---
 
