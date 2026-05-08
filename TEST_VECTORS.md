@@ -244,20 +244,26 @@ python3 mfsu_crypt_ref.py
 ```
 
 ---
-
 ## Citation
-
+ 
 If you use these vectors in your research, please cite:
-
+ 
 ```bibtex
 @misc{fractalshield2026,
-  title   = {FractalShield: A Stream Cipher Based on Fractal Field Dynamics},
+  title   = {FractalShield: Oracle-Free Verification with Geometric Cost Escalation for Offline Brute-Force Resistance},
   author  = {Fracta-Axis},
   year    = {2026},
   note    = {Preprint v1.0},
-  url     = {https://github.com/Fracta-Axis/Fractalyx}
+  doi     = {10.5281/zenodo.19974049},
+  url     = {https://zenodo.org/records/19974049}
 }
 ```
+ 
+---
+ 
+<p align="center">
+  <sub>MFSU-Crypt Reference Vectors v1.0 · Annex to FractalShield Preprint v1.0</sub>
+</p>
 
 ---
 
