@@ -251,7 +251,7 @@ If you use these vectors in your research, please cite:
 ```bibtex
 @misc{fractalshield2026,
   title   = {FractalShield: Oracle-Free Verification with Geometric Cost Escalation for Offline Brute-Force Resistance},
-  author  = {Fracta-Axis},
+  author  = {Miguel Angel Franco Leon},
   year    = {2026},
   note    = {Preprint v1.0},
   doi     = {10.5281/zenodo.19974049},
