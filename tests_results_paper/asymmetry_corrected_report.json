@@ -1,0 +1,66 @@
+{
+  "levels": {
+    "1": {
+      "name": "Standard",
+      "N_layers": 3,
+      "ratio_lema54_correct": 7,
+      "ratio_paper_table1_wrong": 3.5,
+      "defender_storage_bytes": 3196,
+      "ram_attacker_theoretical_mb": 56.0,
+      "ram_attacker_rss_mb": 32.0,
+      "asymmetry_ratio_theoretical": 18373.0,
+      "time_per_attempt_s": 0.557,
+      "attacker_attempts_per_sec": 1.7941,
+      "defender_attempts_per_sec": 6.7244,
+      "throughput_ratio_def_over_att": 3.7,
+      "gpu_rtx4090": {
+        "threads_max": 438,
+        "attempts_per_sec": 785.798
+      }
+    },
+    "2": {
+      "name": "Reinforced",
+      "N_layers": 4,
+      "ratio_lema54_correct": 15,
+      "ratio_paper_table1_wrong": 7.5,
+      "defender_storage_bytes": 4237,
+      "ram_attacker_theoretical_mb": 120.0,
+      "ram_attacker_rss_mb": 40.0,
+      "asymmetry_ratio_theoretical": 29698.0,
+      "time_per_attempt_s": 0.991,
+      "attacker_attempts_per_sec": 1.0091,
+      "defender_attempts_per_sec": 6.7244,
+      "throughput_ratio_def_over_att": 6.7,
+      "gpu_rtx4090": {
+        "threads_max": 204,
+        "attempts_per_sec": 205.85
+      }
+    },
+    "3": {
+      "name": "Maximum",
+      "N_layers": 5,
+      "ratio_lema54_correct": 31,
+      "ratio_paper_table1_wrong": 15.5,
+      "defender_storage_bytes": 5278,
+      "ram_attacker_theoretical_mb": 248.0,
+      "ram_attacker_rss_mb": 64.0,
+      "asymmetry_ratio_theoretical": 49270.0,
+      "time_per_attempt_s": 1.967,
+      "attacker_attempts_per_sec": 0.5085,
+      "defender_attempts_per_sec": 6.7244,
+      "throughput_ratio_def_over_att": 13.2,
+      "gpu_rtx4090": {
+        "threads_max": 99,
+        "attempts_per_sec": 50.341
+      }
+    }
+  },
+  "corrections": {},
+  "defender": {
+    "steps": 256,
+    "ram_rss_delta_mb": 12.09,
+    "ram_theoretical_mb": 8.0,
+    "time_s": 0.149,
+    "throughput_per_sec": 6.724
+  }
+}
